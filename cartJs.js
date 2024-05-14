@@ -109,12 +109,15 @@ storemyHTML+= `
  document.querySelector('.list-products').innerHTML = storemyHTML;
 //let storemyqty = 1;
 document.querySelectorAll('.fa-plus-circle').forEach(function(element){
-    console.log(element)
 element.addEventListener('click', function(ell){
-    console.log(ell.target.classList);
-// let uniquedataset = e.dataset;
-// console.log(uniquedataset);
-//document.querySelector('.quantity').innerHTML = ++storemyqty;
+let storemyunique = ell.target.dataset;
+console.log(storemyunique);
+let storeItInMyCart;
+Newcart.push({
+  Id:storemyunique,
+  quantity:1
+})
+console.log(Newcart);
 })
 })
 
