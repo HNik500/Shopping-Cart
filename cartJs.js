@@ -117,7 +117,12 @@ totalpricecenter.innerHTML=zero + "$";
 let hearts = document.querySelectorAll('.fa-heart')
 hearts.forEach(function(heart) {
   heart.addEventListener('click', function() {
-    heart.style.color = 'red';
+    // heart.style.color = 'red';
+    if (heart.style.color === 'red') {
+      heart.style.color = ''; // Resets to original color
+    } else {
+      heart.style.color = 'red';
+    }
     }
   )
 });
