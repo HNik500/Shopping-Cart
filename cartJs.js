@@ -85,33 +85,49 @@ mycards.forEach(function(e){
   let qty = e.querySelector('.quantity')
   let changetono = Number(qty.innerHTML) 
   plusbtn.addEventListener('click', function(){
-qty.innerHTML=changetono+=1;
-//console.log(changetono)
+
+qty.innerHTML= changetono+=1;
+console.log(changetono)
 total();
 })
+
 minusbtn.addEventListener('click',function(){
   if(changetono <= 0){
-
     return 
   }
   qty.innerHTML = changetono-=1;
   total();
+
 })
 })
 //slice(0,-1)
 function total(){
-  let zero = 0;
   let totalpricecenter = document.querySelector('.total1009')
+  let zero=0;
 mycards.forEach(function(card){
 let getcardprice = card.querySelector('.unit-price')
 const qty = card.querySelector(".quantity")
 let qtytono = Number(qty.innerHTML)
+let changetono = Number(qtytono)
 let remove_$_and_conver_to_no = Number(getcardprice.innerText.replace('$',"") )
-zero+= remove_$_and_conver_to_no * qtytono;
-
+zero += remove_$_and_conver_to_no * qtytono;
 })
-totalpricecenter.innerHTML = zero;
+totalpricecenter.innerHTML=zero + "$";
 }
+let hearts = document.querySelectorAll('.fa-heart')
+hearts.forEach(function(heart) {
+  heart.addEventListener('click', function() {
+    heart.style.color = 'red';
+    }
+  )
+});
+
+// document.querySelectorAll('.fa-heart').forEach(function(heart) {
+//   heart.addEventListener('click', function() {
+//     heart.style.color = 'red';
+//   });
+// });
+
 
 
 
